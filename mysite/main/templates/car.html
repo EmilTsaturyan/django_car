@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #222;
+          color: #fff;
+        }
+        
+        .car-details {
+          width: 80%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #333;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .car-details img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 5px;
+          margin-bottom: 20px;
+        }
+        
+        h1, h2 {
+          text-align: center;
+        }
+        
+        .details {
+          margin-bottom: 15px;
+        }
+      </style>
+</head>
+<body>
+    {% for i in car %}
+        <div class="car-details">
+            <img src="{{ i.image.url }}" alt="Car 1">
+            <h1>{{i.category}} {{i.name}}</h1>
+            
+            <div class="details">
+                <h2>Details</h2>
+                <p><strong>Make:</strong> {{i.category}}</p>
+                <p><strong>Year:</strong> {{i.year}}</p>
+                <p><strong>Color:</strong> {{i.color}}</p>
+                <p><strong>Price:</strong> ${{i.price}}</p>
+            </div>
+            
+            <div class="details">
+                <h2>Description</h2>
+                <p>{{i.description}}</p>
+            </div>
+            
+            <div class="details">
+            <h2>Contact Seller</h2>
+            <p>Email: emiltsaturyan60@gmail.com</p>
+            <p>Phone: 374-99-99-99-99</p>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>

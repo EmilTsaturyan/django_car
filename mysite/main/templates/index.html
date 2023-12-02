@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          background-color: #222;
+          color: #fff;
+        }
+        
+        .car {
+          width: 300px;
+          margin: 20px;
+          padding: 20px;
+          background-color: #333;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .car img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 5px;
+        }
+        
+        .car h2 {
+          margin-top: 10px;
+          font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% for i in categories %}
+        <div class="car">
+            <center>
+                <h1>{{ i.name}}</h1>
+                <a href="{% url 'cars' i.id%}">
+                    <img src="{{ i.image.url }}" width="200px">
+                </a>
+            </center>
+        </div> 
+    {% endfor %}
+</body>
+</html>
